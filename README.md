@@ -16,7 +16,7 @@ each row giving a wind-speed interval (`q05`, `q50`, `q95`) and a direction (`di
 | Requested | Provided here |
 |---|---|
 | **Code** (repo link or archive) | This repository (public). |
-| **Environment** (Python version + pinned deps) | `requirements.txt` — every dependency pinned to an exact version; **Python 3.12.6**. These are the versions that yield byte-identical output. |
+| **Environment** (Python version + pinned deps) | `requirements.txt` — the 7 top-level deps pinned; `requirements.lock` — full `pip freeze` (direct + transitive), **verified to reproduce byte-identically**; **Python 3.12.6**. |
 | **README** (setup + run end-to-end, with the reproduce command) | The **TL;DR** below: create the env, get the dataset, run one command to regenerate `predictions.csv`. |
 | **Trained models** (weights, so you can run inference directly) | `models/dir_models.joblib` is committed (4.2 MB). The default `reproduce.py` run **loads these weights and runs inference** — you do *not* need to retrain. (Retraining the one model from the provided data is optional, via `--retrain`.) |
 
@@ -95,7 +95,8 @@ provided-data-only / no-external-data proof.
 ```
 predictions.csv          THE winning submission (q05,q50,q95,dir_50 per window/buoy/horizon/hour)
 reproduce.py             provided dataset -> predictions.csv, asserts byte-identity (the source of truth)
-requirements.txt         exact pinned versions for byte-identical reproduction (Python 3.12.6)
+requirements.txt         top-level deps, pinned (Python 3.12.6)
+requirements.lock        full pip freeze (direct + transitive), verified byte-identical
 checksums.sha256         SHA-256 of predictions.csv and the model file
 METHODOLOGY.md           the approach: per-horizon design and the key ideas
 COMPLIANCE.md            data-provenance proof — only the provided dataset is used
