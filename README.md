@@ -11,6 +11,19 @@ each row giving a wind-speed interval (`q05`, `q50`, `q95`) and a direction (`di
 
 ---
 
+## For the organizers — what you asked for
+
+| Requested | Provided here |
+|---|---|
+| **Code** (repo link or archive) | This repository (public). |
+| **Environment** (Python version + pinned deps) | `requirements.txt` — every dependency pinned to an exact version; **Python 3.12.6**. These are the versions that yield byte-identical output. |
+| **README** (setup + run end-to-end, with the reproduce command) | The **TL;DR** below: create the env, get the dataset, run one command to regenerate `predictions.csv`. |
+| **Trained models** (weights, so you can run inference directly) | `models/dir_models.joblib` is committed (4.2 MB). The default `reproduce.py` run **loads these weights and runs inference** — you do *not* need to retrain. (Retraining the one model from the provided data is optional, via `--retrain`.) |
+
+The single input is the organizers' dataset (Zenodo 20317029); nothing else is downloaded or used.
+
+---
+
 ## TL;DR — reproduce from scratch
 
 ```bash
