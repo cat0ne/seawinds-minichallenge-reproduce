@@ -1,0 +1,13 @@
+# Pinned to the exact environment that yields BYTE-IDENTICAL reproduction of the
+# winning submission (candDB7_w20). Python 3.12.6.
+#
+#   python -m venv .venv && source .venv/bin/activate
+#   pip install -r requirements.txt
+#
+numpy==1.26.4
+pandas==3.0.3
+lightgbm==4.6.0
+scikit-learn==1.8.0
+scipy==1.17.1
+joblib==1.5.3
+pyarrow==24.0.0

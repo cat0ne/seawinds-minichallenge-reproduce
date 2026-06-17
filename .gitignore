@@ -1,0 +1,13 @@
+# Scratch / generated — NOT committed
+_work/
+predictions_reproduced.csv
+__pycache__/
+*.pyc
+.DS_Store
+
+# The organizers' dataset is NOT redistributed here — download from Zenodo (see README).
+mini_challenge_dataset/
+*.zip
+
+# NOTE: models/dir_models.joblib IS committed on purpose (the one trained model; the
+# organizers require shipping the model artifact). It is intentionally NOT ignored.
